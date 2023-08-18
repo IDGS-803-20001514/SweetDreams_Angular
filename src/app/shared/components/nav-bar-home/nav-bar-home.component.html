@@ -1,0 +1,37 @@
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&display=swap" rel="stylesheet">
+<div class="row">
+  <div class="container-fluid fixed-top px-0 ">
+    <div class="top-bar row gx-0 align-items-center d-none d-lg-flex">
+        <div class="col-lg-6 px-5 text-start">
+            <small><i class="uil uil-map text-danger me-2"></i>#437, Leon, Guanajuato</small>
+            <small class="ms-4"><i class="uil uil-clock text-danger me-2"></i>9.00 am - 9.00 pm</small>
+        </div>
+        <div class="col-lg-6 px-5 text-end">
+            <small><i class="uil uil-envelope-share text-danger me-2"></i>SweetDreams@gmail.com</small>
+            <small class="ms-4"><i class="uil uil-phone-volume text-danger me-2"></i>+52 345 6789</small>
+        </div>
+    </div>
+</div>
+<div class="row menu fixed-top">
+    <div class="col-1">
+    </div>
+    <div class="col-2">
+      <ul class="nav justify-content-start ">
+        <li>
+          <img class="nav-logo" src="../../../assets/images/logo.png" alt="SweetDreams">
+        </li>
+      </ul>
+    </div>
+      <div class="col-8">
+          <ul class="nav justify-content-end navbar-light">
+              <li [routerLink]="item.router" *ngFor="let item of linksMenu" class="nav-item">
+                <button  type="button" class="btn btn-danger">{{item.nombre}}
+                  <span style="font-size: 15px;"><i class="{{item.icono}}"></i></span>
+                </button>
+              </li>
+              
+          </ul>
+      </div>
+  </div>
+  
+  

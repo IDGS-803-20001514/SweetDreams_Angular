@@ -1,0 +1,26 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-8">
+            <form class="form_main" (ngSubmit)="editDepartment()">
+                <p class="heading">Actualizar Departamento</p>
+                <div class="inputContainer" style="display: none;">
+                    <input  name="id" [(ngModel)]="actDepartment.id" readonly class="inputField" type="text" >
+                </div> 
+                <div class="inputContainer">
+                <input name="departamento1" [(ngModel)]="actDepartment.departamento1" placeholder="Departamento" class="inputField" type="text" >
+                </div> 
+                <div class="inputContainer">
+                    <input name="descripcion" [(ngModel)]="actDepartment.descripcion"placeholder="Descripcion" class="inputField" type="text" >
+                </div>  
+            <button id="button">Actualizar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+

@@ -1,0 +1,16 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-8">
+            <form class="form_main" (ngSubmit)="addUnit()">
+                <p class="heading">Agregar Tipo Unidad</p>
+                <div class="inputContainer">
+                <input name="unidad" [(ngModel)]="regUnit.unidad" placeholder="Unidad" class="inputField" type="text" >
+                </div>  
+            <button id="button">Agregar</button>
+            </form>
+        </div>
+    </div>
+</div>

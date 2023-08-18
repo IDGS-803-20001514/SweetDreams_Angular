@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-8">
+            <form class="form_main" (ngSubmit)="editUnit()">
+                <p class="heading">Actualizar Tipo Unidad</p>
+                <div class="inputContainer" style="display: none;">
+                    <input name="id" [(ngModel)]="actUnit.id" readonly class="inputField" type="text" >
+                    </div>  
+                <div class="inputContainer">
+                <input name="nombre" [(ngModel)]="actUnit.unidad" placeholder="Unidad" class="inputField" type="text" >
+                </div>  
+            <button id="button">Actualizar</button>
+            </form>
+        </div>
+    </div>
+</div>

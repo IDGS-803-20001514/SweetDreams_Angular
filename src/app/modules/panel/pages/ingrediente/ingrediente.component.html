@@ -1,0 +1,52 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-9">
+            <h1 class="text-center"><b>INGREDIENTES</b></h1>
+            <div class="mb-3">
+                <button class="btn btn-danger" (click)="openInsertWindow()">AGREGAR(+)</button>
+            </div>
+                  <div>
+                    <table id="tblIngrediente" class="table text-center">
+                      <thead>
+                        <tr>
+                          <th>NOMBRE</th>
+                          <th>STOCK MINIMO</th>
+                          <th>CREACIÓN</th>
+                          <th>UNIDAD DE MEDIDA</th>
+                          <th>ACCIONES</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let data of dataSource">
+                          <td>{{ data.ingrediente1 }}</td>
+                          <td>{{ data.stockMinimo }}</td>
+                          <td>{{ data.fechaCreacion }}</td>
+                          <td>
+                            <div *ngFor="let u of dataUnit">
+                              <p *ngIf="data.unidadMedidaId == u.id">{{ u.unidad }}</p>
+                            </div>
+                          </td>
+                          <td>
+                            <button
+                              class="btn btn-warning m-1"
+                              (click)="openEditWindow(data)"
+                            >
+                              EDITAR
+                            </button>
+                            <button
+                              class="btn btn-danger m-1"
+                              (click)="dropIngredient(data.id)"
+                            >
+                              ELIMINAR
+                            </button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+/*** Footer ***/
+
+h4{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    
+}
+.footer .btn.btn-link {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    text-decoration: none;
+    color: #b20e0e;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    font-weight: normal;
+    text-transform: capitalize;
+    transition: .3s;
+}
+
+
+.footer .btn.btn-link:hover {
+    color: var(#b20e0e);
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+
+.copyright {
+    color: var(white);
+    background: #ffffff;
+}
+
+.copyright a {
+    color: var(white);
+}
+
+.copyright a:hover {
+    color: var(white);
+}

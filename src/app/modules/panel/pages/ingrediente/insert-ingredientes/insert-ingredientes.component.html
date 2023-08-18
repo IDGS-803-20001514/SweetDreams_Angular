@@ -1,0 +1,25 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-8">
+          <form class="form_main" (ngSubmit)="addIngredient()">
+            <p class="heading">Agregar Ingrediente</p>
+            <div class="inputContainer">
+            <input name="ingrediente1" [(ngModel)]="regIngredient.ingrediente1" placeholder="Ingrediente" class="inputField" type="text" >
+            </div>
+        <div class="inputContainer">
+            <input name="stockMinimo" [(ngModel)]="regIngredient.stockMinimo" placeholder="Stock Minimo"  class="inputField" type="text" >
+        </div>   
+        <div class="inputContainer">
+          <select class="form-select" name="unidadMedidaId" [(ngModel)]="regIngredient.unidadMedidaId">
+            <option *ngFor="let data of dataUnit" [value]="data.id">{{ data.unidad }}</option>
+          </select>
+      </div>   
+        <button id="button">Agregar</button>
+        </form>
+                 
+                </div>
+              </div>
+</div>

@@ -1,0 +1,104 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-5">
+            <form class="form_main" >
+                <p class="heading">Actualizar Receta</p>
+                <div class="row">
+                    <div class="col-12" style="display: none;">
+                        <div class="inputContainer">
+                            <input name="id" [(ngModel)]="actReceta.id" placeholder="Id" class="inputField" type="text" >
+                        </div>  
+                    </div>
+                    <div class="col-6">
+                        <div class="inputContainer">
+                            <input name="receta" [(ngModel)]="actReceta.receta" placeholder="Nombre" class="inputField" type="text" >
+                        </div>  
+                    </div>
+                    <div class="col-6">
+                        <div class="inputContainer">
+                            <input name="descripcion" [(ngModel)]="actReceta.descripcion" placeholder="Descripción" class="inputField" type="text" >
+                        </div>  
+                    </div>
+                    <div class="col-4">
+                        <div class="inputContainer">
+                            <input name="duracion" [(ngModel)]="actReceta.duracion" placeholder="Duración" class="inputField" type="text" >
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <p class="heading">Instrucciones</p>
+                    <div class="col-6">
+                        <div class="inputContainer">
+                            <select class="form-select" name="ingredienteId" [(ngModel)]="ingredienteId">
+                                <option *ngFor="let data of dataIngredient" [value]="data.id">{{ data.ingrediente1 }}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <select class="form-select" name="unidadMedidaId" [(ngModel)]="unidadMedidaId">
+                            <option *ngFor="let data of dataUnit" [value]="data.id">{{ data.unidad }}</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <div class="inputContainer">
+                            <input name="cantidad" [(ngModel)]="cantidad" placeholder="Cantidad" class="inputField" type="text" >
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="inputContainer">
+                            <input name="instruccion" [(ngModel)]="instruccion" placeholder="Instruccion" class="inputField" type="text" >
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <button id="button" (click)="editRecipe()" >Finalizar Receta</button>
+                    </div>
+                    <div class="col-6">
+                        <button id="button" (click)="addDetail()" >Agregar Detalle</button>
+                    </div>
+                </div>
+           
+            </form>
+        </div>
+        <div class="col-5">
+            <table class="table text-center">
+                <thead>
+                  <tr>
+                    <th>INGREDIENTE</th>
+                    <th>CANTIDAD</th>
+                    <th>UDS</th>
+                    <th>INSTRUCCIONES</th>
+                    <th>ACCIONES</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let data of dtReceta">
+                    <td>
+                      <div *ngFor="let i of dataIngredient">
+                        <p *ngIf="data.ingredienteId == i.id">{{ i.ingrediente1 }}</p>
+                      </div>
+                    </td>
+                    <td>{{ data.cantidad }}</td>
+                    <td>
+                      <div *ngFor="let u of dataUnit">
+                        <p *ngIf="data.unidadMedidaId == u.id">{{ u.unidad }}</p>
+                      </div>
+                    </td>
+                    <td>{{ data.instruccion }}</td>
+                    <td>
+                      <button id="button" class="btn btn-danger m-1" (click)="dropDetail(data.id)">
+                        ELIMINAR
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
+
+

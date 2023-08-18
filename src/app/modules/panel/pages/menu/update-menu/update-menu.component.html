@@ -1,0 +1,24 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-8">
+            <form class="form_main" (ngSubmit)="actualizar()">
+                <p class="heading">Actualizar Menu</p>
+
+                <img src="{{ actMenu.foto }}" alt="" width="100px" height="100px">
+                <br>
+                <div class="inputContainer">
+                    <label for="form-control"><b>Cambiar Imagen</b></label>
+                    <input type="file" class="form-control" accept="image/*" id="inputFile" name="foto"/>
+                </div>  
+                <div class="inputContainer">
+                    <input type="text" class="form-control" name="costo" [(ngModel)]="actMenu.costo" placeholder="$ Costo"/>
+                </div> 
+            <button id="button">Actualizar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
