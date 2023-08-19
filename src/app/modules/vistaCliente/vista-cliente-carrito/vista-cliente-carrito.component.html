@@ -1,0 +1,52 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2">
+            <app-base-cliente></app-base-cliente>
+        </div>
+        <div class="col-10">
+
+            <div class="row">
+                <div class="col-12">
+                    <h1>Carrito</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <h2>Productos</h2>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" (click)="comprar()">Comprar</button>
+
+            <div class="row">
+                <div class="col-12">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th style="width: 150px">Producto</th>
+                                <th>Nombre</th>
+                                <th>Precio</th>
+                                <th style="width: 150px">Cantidad</th>
+                                <th>Subtotal</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let produc of carrito">
+                                <td><img src="{{ produc.foto }}" alt="" style="height: 100px; width:100px"></td>
+                                <td>{{produc.receta.receta}}</td>
+                                <td>${{produc.costo}}</td>
+                                <td><input type="number" name="inputCantidad" value="1" class="form-control" style="width: 150px" (change)="onCantidadChange($event, produc)"></td>
+                                <td>${{produc.subtotal}}</td>
+                                <td>
+                                    <button class="btn btn-danger" (click)="eliminarProducto(produc)">Eliminar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

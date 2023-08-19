@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2">
+      <app-base-cliente></app-base-cliente>
+    </div>
+    <div class="col-10">
+      <br />
+
+      <div class="menu-grid">
+        <mat-card class="menu-card" *ngFor="let m of menu">
+          <img mat-card-image src="{{ m.foto }}" alt="" />
+          <mat-card-content>
+            <p>
+              <strong>{{ m.receta.receta }} ${{ m.costo }}</strong>
+              <br /><br />
+              <strong>
+                Cuenta con un tiempo aproximado de {{ m.receta.duracion }} min
+                en esta listo.
+              </strong>
+              <br /><br />
+              {{ m.receta.descripcion }}
+            </p>
+          </mat-card-content>
+          <mat-card-actions align="end">
+            <button mat-button (click)="guardarProducto(m)">Agregar</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

@@ -27,14 +27,14 @@ export class AuthPageComponent {
   constructor(private login:AuthServicesService, private cookie: CookieService, private router:Router){}
  verificarUsuario(){
     console.log('Datos Ingresados:', this.user);
-    
+
     this.login.getUsuarios().subscribe(
       {
         next: response => {
           this.dtUsuario = response;
           console.log('Datos DB:', this.dtUsuario);
           this.dtUsuario.forEach((usuario: any) => {
-          
+
             if (usuario.email === this.user.username && usuario.password === this.user.password && usuario.active === 0) {
               Swal.fire({
                 icon: 'success',
@@ -46,7 +46,7 @@ export class AuthPageComponent {
             }
           });
           console.log('Existe el usuario', this.coincidencia);
-          
+
           if(this.coincidencia === 0){
             Swal.fire({
               icon: 'error',
@@ -60,28 +60,28 @@ export class AuthPageComponent {
               next: response => {
                 this.dtRolUser = response
                 this.dtRolUser.forEach((usuario: any) => {
-          
+
                   if (usuario.userId === this.tipoRol) {
-     
+
                       if(usuario.roleId === 2){//Cliente
                        this.cookie.set('token','password',1,'/')
-                       this.router.navigate(['/','panel']) 
+                       this.router.navigate(['/','sweetdreams'])
                       }
                       if(usuario.roleId === 3 || usuario.roleId === 1){//Empleado y ADMIN
                         this.cookie.set('token','password',1,'/')
-                        this.router.navigate(['/','panel']) 
+                        this.router.navigate(['/','panel'])
                       }
                   }
                 });
               },
               error: error => console.log(error)
             })}
-          
+
         },
         error: error => console.log(error)
       }
 
     )
-            
+
  }
 }
