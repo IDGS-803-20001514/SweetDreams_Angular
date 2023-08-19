@@ -7,7 +7,7 @@ import { UnidadesMedida } from 'src/app/interfaces/unidades-media';
 })
 export class UnidadesService {
 
-  constructor(public http: HttpClient) {}
+  constructor(public http: HttpClient) { }
 
   showUnits() {
     return this.http.get('https://localhost:7220/api/UnidadMedidums');

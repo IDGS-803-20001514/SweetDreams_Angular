@@ -12,27 +12,27 @@ export class MenuService {
   constructor(private http:HttpClient) { }
 
   public getMenu():Observable<Menu[]>{
-    return this.http.get<Menu[]>("https://localhost:7220/api/Menus");
+    return this.http.get<Menu[]>("http://192.168.100.51:7220/api/Menus");
   }
 
   public getRecetas():Observable<Receta[]>{
-    return this.http.get<Receta[]>("https://localhost:7220/api/Recetums");
+    return this.http.get<Receta[]>("http://192.168.100.51:7220/api/Recetums");
   }
 
   public agregarMenu(datos:Menu){
-    return this.http.post("https://localhost:7220/api/Menus",datos);
+    return this.http.post("http://192.168.100.51:7220/api/Menus",datos);
   }
 
   public obtenerMenu(id:number){
-    return this.http.get("https://localhost:7220/api/Menus/".concat(''+id));
+    return this.http.get("http://192.168.100.51:7220/api/Menus/".concat(''+id));
   }
 
   public actualizarMenu(datos:Menu){
-    return this.http.put("https://localhost:7220/api/Menus/".concat(''+datos.id) ,datos);
+    return this.http.put("http://192.168.100.51:7220/api/Menus/".concat(''+datos.id) ,datos);
   }
 
   public deleteMenu(id:number){
-    return this.http.delete("https://localhost:7220/api/Menus/".concat(''+id));
+    return this.http.delete("http://192.168.100.51:7220/api/Menus/".concat(''+id));
   }
 
 }

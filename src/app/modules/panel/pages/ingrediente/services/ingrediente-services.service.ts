@@ -7,7 +7,7 @@ import { Ingredientes } from 'src/app/interfaces/ingredientes';
 })
 export class IngredienteServicesService {
 
-  constructor(public http: HttpClient) {}
+  constructor(public http: HttpClient) { }
 
   showIngredients() {
     return this.http.get('https://localhost:7220/api/Ingredientes');
@@ -35,9 +35,9 @@ export class IngredienteServicesService {
     return this.http.delete(`https://localhost:7220/api/Ingredientes/${id}`);
   }
 
-  buscarUnidadMedida(id:number){
+  buscarUnidadMedida(id: number) {
     return this.http.get(`https://localhost:7220/api/UnidadMedidums/${id}`);
- 
+
   }
 
 

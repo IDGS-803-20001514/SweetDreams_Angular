@@ -18,6 +18,7 @@ export class InsertEntradaComponent {
 
     dtIngrediente:any = []
     dtUnidades:any = []
+    
     dtInventario:any = []
     coincidencia : number = 0
     cantidad: number = 0
@@ -119,7 +120,7 @@ export class InsertEntradaComponent {
           this.regInventario.id = this.idInventario
           console.log('existencia actual antes', this.regInventario.existenciaActual);
           
-          this.regInventario.existenciaActual = (this.regInventario.existenciaActual + this.cantidad)
+          this.regInventario.existenciaActual = (parseInt( this.regInventario.existenciaActual.toString()) + this.cantidad)
          
           console.log('existencia actual despues', this.regInventario.existenciaActual);
           
