@@ -9,12 +9,12 @@ import { Usuario } from 'src/app/interfaces/usuario';
 })
 export class AuthServicesService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  public getUsuarios():Observable<Usuario[]>{
-    return this.http.get<Usuario[]>("http://192.168.100.51:7220/api/Usuarios");
+  public getUsuarios(): Observable<Usuario[]> {
+    return this.http.get<Usuario[]>("https://localhost:7220/api/Usuarios");
   }
-  public getRolUser():Observable<rolUser[]>{
-    return this.http.get<rolUser[]>("http://192.168.100.51:7220/api/RolesUsers");
+  public getRolUser(): Observable<rolUser[]> {
+    return this.http.get<rolUser[]>("https://localhost:7220/api/RolesUsers");
   }
 }

@@ -1,0 +1,95 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-4">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-8">
+      <form class="form_main" (ngSubmit)="actualizarCompra()">
+        <p class="heading">Actuaizar Compra</p>
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <label for="proveedorControl">Proveedor</label>
+              <select
+                class="form-select"
+                name="proveedorControl"
+                [(ngModel)]="selectedProveedorId"
+              >
+                <option
+                  *ngFor="let proveedor of proveedores"
+                  [value]="proveedor.id"
+                >
+                  {{ proveedor.alias }}
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="form-group">
+              <label for="metodoPagoControl">Metodo Pago</label>
+              <select
+                class="form-select"
+                name="metodoPagoControl"
+                [(ngModel)]="selectMetodoPagoId"
+              >
+                <option *ngFor="let mPago of metodoPagos" [value]="mPago.id">
+                  {{ mPago.metodoPago1 }}
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="form-group">
+              <label for="ingredientesControl">Ingredientes</label>
+              <select
+                class="form-select"
+                name="ingredientesControl"
+                [(ngModel)]="selectIngredienteId"
+              >
+                <option
+                  *ngFor="let ingredi of ingredientes"
+                  [value]="ingredi.id"
+                >
+                  {{ ingredi.ingrediente1 }}
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="form-group">
+              <label for="unidadMedidaControl">Unidad de Medida</label>
+              <select
+                class="form-select"
+                name="unidadMedidaControl"
+                [(ngModel)]="selectUnidadMedidaId"
+              >
+                <option *ngFor="let unidM of unidadMedida" [value]="unidM.id">
+                  {{ unidM.unidad }}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6">
+          <div class="form-group">
+            <label for="cantidadControl">Cantidad</label>
+            <input
+              type="number"
+              class="inputField"
+              name="cantidadControl"
+              [(ngModel)]="cantidad"
+              required
+            />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" id="button">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -9,44 +9,44 @@ import { Usuario } from 'src/app/interfaces/usuario';
 })
 export class ClienteService {
 
-  constructor(private http: HttpClient){}
+  constructor(private http: HttpClient) { }
 
-    public getClientes():Observable<Cliente[]>{
-        return this.http.get<Cliente[]>("http://192.168.100.51:7220/api/Clientes");
-    }
+  public getClientes(): Observable<Cliente[]> {
+    return this.http.get<Cliente[]>("https://localhost:7220/api/Clientes");
+  }
 
-    AgregarUsuario(datos:Usuario){
-        return this.http.post('http://192.168.100.51:7220/api/Usuarios',datos)
-      }
+  AgregarUsuario(datos: Usuario) {
+    return this.http.post('https://localhost:7220/api/Usuarios', datos)
+  }
 
-      public getUsuarios():Observable<Usuario[]>{
-        return this.http.get<Usuario[]>("http://192.168.100.51:7220/api/Usuarios");
-      }
-      AgregarCliente(datos:Cliente){
-        return this.http.post('http://192.168.100.51:7220/api/Clientes',datos)
-      }
-      AsignarRolCliente(datos:rolUser){
-        return this.http.post('http://192.168.100.51:7220/api/RolesUsers',datos)
-      }
+  public getUsuarios(): Observable<Usuario[]> {
+    return this.http.get<Usuario[]>("https://localhost:7220/api/Usuarios");
+  }
+  AgregarCliente(datos: Cliente) {
+    return this.http.post('https://localhost:7220/api/Clientes', datos)
+  }
+  AsignarRolCliente(datos: rolUser) {
+    return this.http.post('https://localhost:7220/api/RolesUsers', datos)
+  }
 
-    public obtenerCliente(id:number){
-        return this.http.get(`http://192.168.100.51:7220/api/Clientes/${id}`);
-    }
+  public obtenerCliente(id: number) {
+    return this.http.get(`https://localhost:7220/api/Clientes/${id}`);
+  }
 
-    public obtenerUsuario(id:number){
-        return this.http.get(`http://192.168.100.51:7220/api/Usuarios/${id}`);
-    }
+  public obtenerUsuario(id: number) {
+    return this.http.get(`https://localhost:7220/api/Usuarios/${id}`);
+  }
 
-    public actualizarCliente(datos:Cliente){
-      return this.http.put(`http://192.168.100.51:7220/api/Clientes/${datos.id}`,
+  public actualizarCliente(datos: Cliente) {
+    return this.http.put(`https://localhost:7220/api/Clientes/${datos.id}`,
       datos)
-    }
-  
-    public deleteCliente(id:number){
-        return this.http.delete(`http://192.168.100.51:7220/api/Clientes/${id}`);
-    }
-    public ActualizarUser(datos:Usuario){
-      return this.http.put(`http://192.168.100.51:7220/api/Usuarios/${datos.id}`,datos);
-    }
-   
+  }
+
+  public deleteCliente(id: number) {
+    return this.http.delete(`https://localhost:7220/api/Clientes/${id}`);
+  }
+  public ActualizarUser(datos: Usuario) {
+    return this.http.put(`https://localhost:7220/api/Usuarios/${datos.id}`, datos);
+  }
+
 }

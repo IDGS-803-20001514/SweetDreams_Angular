@@ -42,6 +42,8 @@ import { EntradasComponent } from './modules/panel/pages/inventario/entradas/ent
 import { InsertEntradaComponent } from './modules/panel/pages/inventario/entradas/insert-entrada/insert-entrada.component';
 import { SalidasComponent } from './modules/panel/pages/inventario/salidas/salidas.component';
 import { InsertSalidasComponent } from './modules/panel/pages/inventario/salidas/insert-salidas/insert-salidas.component';
+import { InsertarCompraComponent } from './modules/panel/pages/compras/insertar-compra/insertar-compra.component';
+import { ActualizarCompraComponent } from './modules/panel/pages/compras/actualizar-compra/actualizar-compra.component';
 
 
 
@@ -49,201 +51,211 @@ const routes: Routes = [
   {
     path: '', //Localhost Ruta Raiz
     component: HomePageComponent,
-    children:[
+    children: [
       {
-        path:'',
-        component:InicioPageComponent
-       },
-       {
-        path:'about',
-        component:AboutPageComponent
-       },
-       {
-        path:'ubicacion',
-        component: ContactPageComponent
-       },
-       {
-        path:'auth',
-        component:AuthPageComponent
+        path: '',
+        component: InicioPageComponent
       },
       {
-        path:'register',
-        component:RegisterComponent
+        path: 'about',
+        component: AboutPageComponent
+      },
+      {
+        path: 'ubicacion',
+        component: ContactPageComponent
+      },
+      {
+        path: 'auth',
+        component: AuthPageComponent
+      },
+      {
+        path: 'register',
+        component: RegisterComponent
       },
     ]
   },
-  {                                                                                               
-    path:'panel',
+  {
+    path: 'panel',
     component: PanelComponent,
-    canActivate:[SessionsGuard]
+    canActivate: [SessionsGuard]
   },
 
-    {
-      path:'dashboard',
-      component:DashboardComponent,
-      canActivate:[SessionsGuard]
-    },
-    {
-      path:'cliente',
-      component:ClienteComponent,
-      canActivate:[SessionsGuard]
-    },
-    {
-      path:'Insertarcliente',
-      component:InsertarClienteComponent,
-      canActivate:[SessionsGuard]
-    },
-    {
-      path:'ActualizarCliente/:id',
-      component:ActualizarClienteComponent,
-      canActivate:[SessionsGuard]
-    },
-    {
-      path:'empleados',
-      component:EmpleadoComponent,
-      canActivate:[SessionsGuard]
-    },
-    {
-      path:'puestos',
-      component:PuestosComponent,
-      canActivate:[SessionsGuard]
-    },
-    {
-      path:'departamentos',
-      component:DepartamentosComponent,
-      canActivate:[SessionsGuard]
-    },
-    {
-      path:'insertDepartamento',
-      component:AgregarDepartamentoComponent,
-      canActivate:[SessionsGuard]
-    },
-    {
-      path:'editDepartamento/:id',
-      component: ActualizarDepartamentoComponent,
-      canActivate:[SessionsGuard]
-    },
-    {
-      path:'proveedores',
-      component:ProveedoresComponent,
-      canActivate:[SessionsGuard]
-    },
-    {
-      path:'insertProveedor',
-      component:InsertarProveedorComponent,
-      canActivate:[SessionsGuard]
-    },
-    {
-      path:'editProveedor/:id',
-      component:UpdateProveedorComponent,
-      canActivate:[SessionsGuard]
-    },
-    {
-      path:'ventas',
-      component:VentasComponent,
-      canActivate:[SessionsGuard]
-    },
-    {
-      path:'compras',
-      component: ComprasComponent,
-      canActivate:[SessionsGuard]
-    },
-    {
-      path:'menu',
-      component:MenuComponent,
-      canActivate:[SessionsGuard]
-    },
-    {
-      path:'agregarMenu',
-      component:InsertMenuComponent,
-      canActivate:[SessionsGuard]
-    },
-    {
-      path:'editarMenu/:id',
-      component:UpdateMenuComponent,
-      canActivate:[SessionsGuard]
-    },
-    {
-      path:'recetas',
-      component:RecetaComponent,
-      canActivate:[SessionsGuard]
-    },
-    {
-      path:'insertReceta',
-      component:InsertarRecetaComponent,
-      canActivate:[SessionsGuard]
-    },
-    {
-      path:'editReceta/:id',
-      component:ActualizarRecetaComponent,
-      canActivate:[SessionsGuard]
-    },
-    {
-      path:'detalle/:id',
-      component:DetalleRecetaComponent,
-      canActivate:[SessionsGuard]
-    },
-    {
-      path:'ingredientes',
-      component:IngredienteComponent,
-      canActivate:[SessionsGuard]
-    },
-    {
-      path:'insertIngredientes',
-      component:InsertIngredientesComponent,
-      canActivate:[SessionsGuard]
-    },
-    {
-      path:'editIngredientes/:id',
-      component:ActualizarIngredienteComponent,
-      canActivate:[SessionsGuard]
-    },
-    {
-      path:'unidades',
-      component:UnidadComponent,
-      canActivate:[SessionsGuard]
-    },
-    {
-      path:'insertUnidades',
-      component:UnidadesInsertarComponent,
-      canActivate:[SessionsGuard]
-    },
-    {
-      path:'editUnidades/:id',
-      component:UnidadesEditarComponent,
-      canActivate:[SessionsGuard]
-    },
-    {
-      path:'inventario',
-      component:InventarioComponent,
-      canActivate:[SessionsGuard]
-    },
-    {
-      path:'Entradas',
-      component:EntradasComponent,
-      canActivate:[SessionsGuard]
-    },
-    {
-      path:'InsertarEntrada',
-      component: InsertEntradaComponent,
-      canActivate:[SessionsGuard]
-    },
-    {
-      path:'Salidas',
-      component:SalidasComponent,
-      canActivate:[SessionsGuard]
-    },
-    {
-      path:'InsertarSalida',
-      component:InsertSalidasComponent,
-      canActivate:[SessionsGuard]
-    },
-    {
-      path:'salir',
-      component:HomePageComponent
-    },
-    { path: '404', component: NotFoundComponent }, // Ruta para manejar errores 404
-    { path: '**', redirectTo: '/404' }, // Ruta por defecto para cualquier ruta no definida
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [SessionsGuard]
+  },
+  {
+    path: 'cliente',
+    component: ClienteComponent,
+    canActivate: [SessionsGuard]
+  },
+  {
+    path: 'Insertarcliente',
+    component: InsertarClienteComponent,
+    canActivate: [SessionsGuard]
+  },
+  {
+    path: 'ActualizarCliente/:id',
+    component: ActualizarClienteComponent,
+    canActivate: [SessionsGuard]
+  },
+  {
+    path: 'empleados',
+    component: EmpleadoComponent,
+    canActivate: [SessionsGuard]
+  },
+  {
+    path: 'puestos',
+    component: PuestosComponent,
+    canActivate: [SessionsGuard]
+  },
+  {
+    path: 'departamentos',
+    component: DepartamentosComponent,
+    canActivate: [SessionsGuard]
+  },
+  {
+    path: 'insertDepartamento',
+    component: AgregarDepartamentoComponent,
+    canActivate: [SessionsGuard]
+  },
+  {
+    path: 'editDepartamento/:id',
+    component: ActualizarDepartamentoComponent,
+    canActivate: [SessionsGuard]
+  },
+  {
+    path: 'proveedores',
+    component: ProveedoresComponent,
+    canActivate: [SessionsGuard]
+  },
+  {
+    path: 'insertProveedor',
+    component: InsertarProveedorComponent,
+    canActivate: [SessionsGuard]
+  },
+  {
+    path: 'editProveedor/:id',
+    component: UpdateProveedorComponent,
+    canActivate: [SessionsGuard]
+  },
+  {
+    path: 'ventas',
+    component: VentasComponent,
+    canActivate: [SessionsGuard]
+  },
+  {
+    path: 'compras',
+    component: ComprasComponent,
+    canActivate: [SessionsGuard]
+  },
+  {
+    path: 'agregarCompra',
+    component: InsertarCompraComponent,
+    canActivate: [SessionsGuard]
+  },
+  {
+    path: 'editarCompra/:id',
+    component: ActualizarCompraComponent,
+    canActivate: [SessionsGuard]
+  },
+  {
+    path: 'menu',
+    component: MenuComponent,
+    canActivate: [SessionsGuard]
+  },
+  {
+    path: 'agregarMenu',
+    component: InsertMenuComponent,
+    canActivate: [SessionsGuard]
+  },
+  {
+    path: 'editarMenu/:id',
+    component: UpdateMenuComponent,
+    canActivate: [SessionsGuard]
+  },
+  {
+    path: 'recetas',
+    component: RecetaComponent,
+    canActivate: [SessionsGuard]
+  },
+  {
+    path: 'insertReceta',
+    component: InsertarRecetaComponent,
+    canActivate: [SessionsGuard]
+  },
+  {
+    path: 'editReceta/:id',
+    component: ActualizarRecetaComponent,
+    canActivate: [SessionsGuard]
+  },
+  {
+    path: 'detalle/:id',
+    component: DetalleRecetaComponent,
+    canActivate: [SessionsGuard]
+  },
+  {
+    path: 'ingredientes',
+    component: IngredienteComponent,
+    canActivate: [SessionsGuard]
+  },
+  {
+    path: 'insertIngredientes',
+    component: InsertIngredientesComponent,
+    canActivate: [SessionsGuard]
+  },
+  {
+    path: 'editIngredientes/:id',
+    component: ActualizarIngredienteComponent,
+    canActivate: [SessionsGuard]
+  },
+  {
+    path: 'unidades',
+    component: UnidadComponent,
+    canActivate: [SessionsGuard]
+  },
+  {
+    path: 'insertUnidades',
+    component: UnidadesInsertarComponent,
+    canActivate: [SessionsGuard]
+  },
+  {
+    path: 'editUnidades/:id',
+    component: UnidadesEditarComponent,
+    canActivate: [SessionsGuard]
+  },
+  {
+    path: 'inventario',
+    component: InventarioComponent,
+    canActivate: [SessionsGuard]
+  },
+  {
+    path: 'Entradas',
+    component: EntradasComponent,
+    canActivate: [SessionsGuard]
+  },
+  {
+    path: 'InsertarEntrada',
+    component: InsertEntradaComponent,
+    canActivate: [SessionsGuard]
+  },
+  {
+    path: 'Salidas',
+    component: SalidasComponent,
+    canActivate: [SessionsGuard]
+  },
+  {
+    path: 'InsertarSalida',
+    component: InsertSalidasComponent,
+    canActivate: [SessionsGuard]
+  },
+  {
+    path: 'salir',
+    component: HomePageComponent
+  },
+  { path: '404', component: NotFoundComponent }, // Ruta para manejar errores 404
+  { path: '**', redirectTo: '/404' }, // Ruta por defecto para cualquier ruta no definida
 
 
 ];

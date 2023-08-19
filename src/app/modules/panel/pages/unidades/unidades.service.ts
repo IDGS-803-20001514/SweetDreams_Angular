@@ -7,28 +7,28 @@ import { UnidadesMedida } from 'src/app/interfaces/unidades-media';
 })
 export class UnidadesService {
 
-  constructor(public http: HttpClient) {}
+  constructor(public http: HttpClient) { }
 
   showUnits() {
-    return this.http.get('http://192.168.100.51:7220/api/UnidadMedidums');
+    return this.http.get('https://localhost:7220/api/UnidadMedidums');
   }
 
   searchUnit(id: number) {
-    return this.http.get(`http://192.168.100.51:7220/api/UnidadMedidums/${id}`);
+    return this.http.get(`https://localhost:7220/api/UnidadMedidums/${id}`);
   }
 
   insertUnit(unit: UnidadesMedida) {
-    return this.http.post('http://192.168.100.51:7220/api/UnidadMedidums', unit);
+    return this.http.post('https://localhost:7220/api/UnidadMedidums', unit);
   }
 
   updateUnit(unit: UnidadesMedida) {
     return this.http.put(
-      `http://192.168.100.51:7220/api/UnidadMedidums/${unit.id}`,
+      `https://localhost:7220/api/UnidadMedidums/${unit.id}`,
       unit
     );
   }
 
   deleteUnit(id: number) {
-    return this.http.delete(`http://192.168.100.51:7220/api/UnidadMedidums/${id}`);
+    return this.http.delete(`https://localhost:7220/api/UnidadMedidums/${id}`);
   }
 }

@@ -39,6 +39,7 @@ import { InsertEntradaComponent } from './pages/inventario/entradas/insert-entra
 import { SalidasComponent } from './pages/inventario/salidas/salidas.component';
 import { InsertSalidasComponent } from './pages/inventario/salidas/insert-salidas/insert-salidas.component';
 import { NgChartsModule } from 'ng2-charts';
+import { MetodoPagoComponent } from './pages/metodo-pago/metodo-pago.component';
 
 
 
@@ -76,7 +77,8 @@ import { NgChartsModule } from 'ng2-charts';
     EntradasComponent,
     InsertEntradaComponent,
     SalidasComponent,
-    InsertSalidasComponent
+    InsertSalidasComponent,
+    MetodoPagoComponent
   ],
   imports: [
     CommonModule,

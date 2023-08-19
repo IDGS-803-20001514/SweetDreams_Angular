@@ -14,6 +14,7 @@ import { HomeModule } from './modules/home/home.module';
 import { NotFoundComponent } from './modules/ServerErrors/not-found/not-found.component';
 import { ChartOptions } from 'chart.js';
 import { NgChartsModule } from 'ng2-charts';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -35,7 +36,8 @@ import { NgChartsModule } from 'ng2-charts';
     HomeModule,
     AuthModule,
     PanelModule,
-    NgChartsModule
+    NgChartsModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
