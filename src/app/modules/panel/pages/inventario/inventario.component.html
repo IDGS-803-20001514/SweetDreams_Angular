@@ -14,7 +14,7 @@
                 <div class="col-4"></div>
                 <div class="col-4">
                     <div class="mb-3">
-                        <button class="btn btn-warning"><b>Salidas</b></button>
+                        <button class="btn btn-warning" (click)="Salidas()" ><b>Salidas</b></button>
                       </div>
                     <div>
                 </div>
@@ -25,7 +25,7 @@
                 <thead>
                   <tr>
                     <th>Ingrediente</th>
-                    <th>UDS</th>
+                    <th>Unidad Medida</th>
                     <th>Existencia Inicial</th>
                     <th>Existencia Actual</th>
                     <th>Fecha Entrada</th>
@@ -33,11 +33,20 @@
                 </thead>
                 <tbody>
                   <tr *ngFor="let data of dataSource">
-                  <td ></td>
-                  <td>{{ data.receta.descripcion }}</td>
-                  <td>{{ data.costo | currency}}</td>
-                  <td></td>
-                  <td></td>
+                    <td>
+                      <div *ngFor="let i of dtIngredientes">
+                          <p *ngIf="data.ingredienteId == i.id">{{ i.ingrediente1 }}</p>
+                      </div>
+                  </td>
+                  <td>
+                      <div *ngFor="let u of dtUnidades">
+                          <p *ngIf="data.unidadMedidaId == u.id">{{ u.unidad }}</p>
+                      </div>
+                  </td>
+                  <td>{{ data.existenciaInicial }}</td>
+                  <td>{{ data.existenciaActual}}</td>
+                  <td>{{data.fechaEntrada}}</td>
+                
                   </tr>
                 </tbody>
               </table>

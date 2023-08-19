@@ -40,6 +40,8 @@ import { InsertMenuComponent } from './modules/panel/pages/menu/insert-menu/inse
 import { UpdateMenuComponent } from './modules/panel/pages/menu/update-menu/update-menu.component';
 import { EntradasComponent } from './modules/panel/pages/inventario/entradas/entradas.component';
 import { InsertEntradaComponent } from './modules/panel/pages/inventario/entradas/insert-entrada/insert-entrada.component';
+import { SalidasComponent } from './modules/panel/pages/inventario/salidas/salidas.component';
+import { InsertSalidasComponent } from './modules/panel/pages/inventario/salidas/insert-salidas/insert-salidas.component';
 
 
 
@@ -224,6 +226,16 @@ const routes: Routes = [
     {
       path:'InsertarEntrada',
       component: InsertEntradaComponent,
+      canActivate:[SessionsGuard]
+    },
+    {
+      path:'Salidas',
+      component:SalidasComponent,
+      canActivate:[SessionsGuard]
+    },
+    {
+      path:'InsertarSalida',
+      component:InsertSalidasComponent,
       canActivate:[SessionsGuard]
     },
     {

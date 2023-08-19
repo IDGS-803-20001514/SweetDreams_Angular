@@ -12,7 +12,8 @@ import { PanelModule } from './modules/panel/panel.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { HomeModule } from './modules/home/home.module';
 import { NotFoundComponent } from './modules/ServerErrors/not-found/not-found.component';
-
+import { ChartOptions } from 'chart.js';
+import { NgChartsModule } from 'ng2-charts';
 
 
 
@@ -33,7 +34,8 @@ import { NotFoundComponent } from './modules/ServerErrors/not-found/not-found.co
     SharedModule,
     HomeModule,
     AuthModule,
-    PanelModule
+    PanelModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

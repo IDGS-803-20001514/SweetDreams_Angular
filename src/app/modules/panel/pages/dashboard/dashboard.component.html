@@ -1,7 +1,46 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-4">
+        <div class="col-2">
             <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-10">
+            <div style="display: flex; justify-content: space-between; width: 80%; margin: auto;">
+                <div style="flex: 1; margin-right: 10px;">
+                  <canvas *ngIf="chartData.length" baseChart
+                          [datasets]="[{ data: getChartDataTotal(), label: 'Compras por Proveedor' }]"
+                          [labels]="getChartDataLabels()"
+                          [options]="chartOptions">
+                  </canvas>
+                </div>
+                
+                <div style="flex: 1; margin-left: 10px;">
+                  <canvas *ngIf="secondChartData.length" baseChart
+                          [datasets]="[{ data: getChartDataCliente(), label: 'Consumido de Clientes' }]"
+                          [labels]="getChartDataCLabels()"
+                          [options]="chartOptions">
+                  </canvas>
+                </div>
+              </div>
+              
+              <div style="display: flex; justify-content: center; width: 80%; margin: auto; margin-top: 20px;">
+                <div style="flex: 1;">
+                  <canvas *ngIf="Datos.length" baseChart
+                          [datasets]="[{ data: getChartTotalProducto(), label: 'Mejores Productos' }]"
+                          [labels]="getChartDataProducto()"
+                          [options]="chartOptions">
+                  </canvas>
+                </div>
+              </div>
+              
+              <div style="display: flex; justify-content: center; width: 80%; margin: auto; margin-top: 20px;">
+                <div style="flex: 1;">
+                  <canvas *ngIf="Utilidad.length" baseChart
+                          [datasets]="[{ data: utilidadDatos(), label: 'Utilidad' }]"
+                          [labels]="utilidadLabel()"
+                          [options]="chartOptions">
+                  </canvas>
+                </div>
+              </div>
         </div>
     </div>
 </div>

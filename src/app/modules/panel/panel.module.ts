@@ -36,7 +36,9 @@ import { InsertMenuComponent } from './pages/menu/insert-menu/insert-menu.compon
 import { UpdateMenuComponent } from './pages/menu/update-menu/update-menu.component';
 import { EntradasComponent } from './pages/inventario/entradas/entradas.component';
 import { InsertEntradaComponent } from './pages/inventario/entradas/insert-entrada/insert-entrada.component';
-
+import { SalidasComponent } from './pages/inventario/salidas/salidas.component';
+import { InsertSalidasComponent } from './pages/inventario/salidas/insert-salidas/insert-salidas.component';
+import { NgChartsModule } from 'ng2-charts';
 
 
 
@@ -72,7 +74,9 @@ import { InsertEntradaComponent } from './pages/inventario/entradas/insert-entra
     InsertMenuComponent,
     UpdateMenuComponent,
     EntradasComponent,
-    InsertEntradaComponent
+    InsertEntradaComponent,
+    SalidasComponent,
+    InsertSalidasComponent
   ],
   imports: [
     CommonModule,
@@ -80,6 +84,7 @@ import { InsertEntradaComponent } from './pages/inventario/entradas/insert-entra
     RouterModule,
     SharedModule,
     FormsModule,
+    NgChartsModule
   ]
 })
 export class PanelModule { }

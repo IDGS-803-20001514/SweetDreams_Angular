@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { InventarioService } from './inventario.service';
+import { IngredienteServicesService } from '../ingrediente/services/ingrediente-services.service';
+import Swal from 'sweetalert2';
+import { UnidadesService } from '../unidades/unidades.service';
 
 @Component({
   selector: 'app-inventario',
@@ -8,11 +12,58 @@ import { Router } from '@angular/router';
 })
 export class InventarioComponent {
 
-  constructor(private router: Router){}
+  constructor(private router: Router, private services: InventarioService,
+    private IngredienteS : IngredienteServicesService,
+    private unidadS : UnidadesService){}
+
   dataSource: any = [];
-  
+  dtIngredientes:any = []
+  dtUnidades: any =[]
+
+  ngOnInit(): void {
+    this.services.getInventario().subscribe({
+      next: (response) =>{
+        this.dataSource = response
+      },
+      error: (error) => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error de Server',
+          text: `Error al consultar Almacen: ${error}`,
+        });
+      },
+    })
+    this.IngredienteS.showIngredients().subscribe({
+      next: (response) => {
+        this.dtIngredientes = response;
+      },
+      error: (error) => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error de Server',
+          text: `Error al consultar ingredientes: ${error}`,
+        });
+      },
+    });
+
+    this.unidadS.showUnits().subscribe({
+      next: (response) => {
+        this.dtUnidades = response;
+      },
+      error: (error) => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error de Server',
+          text: `Error al consultar unidades medida: ${error}`,
+        });
+      },
+    });
+  }
   Entradas()
   {
     this.router.navigate(['/Entradas']);
+  }
+  Salidas(){
+    this.router.navigate(['/Salidas']);
   }
 }

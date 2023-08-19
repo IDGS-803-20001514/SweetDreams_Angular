@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-8">
+            <form class="form_main" (ngSubmit)="AgregarSalida()">
+                <p class="heading">Registrar Salida</p>
+                <div class="inputContainer">
+                    <label for="form-control"><b>Ingrediente:</b></label>
+                    <br>
+                    <select class="form-select" name="entrada" [(ngModel)]="regSalida.ingredienteId">
+                      <option *ngFor="let data of dtIngrediente" [value]="data.id"> {{ data.ingrediente1 }}</option>
+                    </select>
+                </div>  
+                <br>
+                <div class="inputContainer">
+                    <label for="form-control"><b>Unidad:</b></label>
+                    <br>
+                    <select class="form-select" name="entrada" [(ngModel)]="regSalida.unidadMedidaId">
+                      <option *ngFor="let data of dtUnidades" [value]="data.id"> {{ data.unidad }}</option>
+                    </select>
+                </div>  
+                <div class="inputContainer">
+                    <label for="form-control"><b>Cantidad:</b></label>
+                    <br>
+                    <input name="cantidad" [(ngModel)]="regSalida.cantidad" placeholder="Cantidad" class="inputField" type="text" >
+                </div>
+            <button id="button">Agregar</button>
+            </form>
+        </div>
+    </div>
+</div>
