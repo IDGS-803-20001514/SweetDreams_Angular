@@ -19,6 +19,11 @@ export class BaseClienteComponent {
         router: ['/', 'miMenu']
       },
       {
+        nombre: 'Mi Carrito',
+        icono: 'uil uil-chart-down',
+        router: ['/', 'miCarrito']
+      },
+      {
         nombre: 'Mis Pedidos',
         icono: 'uil uil-invoice',
         router: ['/', 'misPedidos']

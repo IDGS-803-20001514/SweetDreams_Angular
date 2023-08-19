@@ -44,7 +44,8 @@ import { BaseClienteComponent } from './modules/vistaCliente/base-cliente/base-c
 import { VistaClienteMenuComponent } from './modules/vistaCliente/vista-cliente-menu/vista-cliente-menu.component';
 import { VistaClientePedidosComponent } from './modules/vistaCliente/vista-cliente-pedidos/vista-cliente-pedidos.component';
 import { VistaClientePerfilComponent } from './modules/vistaCliente/vista-cliente-perfil/vista-cliente-perfil.component';
-
+import { VistaClienteCarritoComponent } from './modules/vistaCliente/vista-cliente-carrito/vista-cliente-carrito.component';
+import { VistaClientePagosComponent } from './modules/vistaCliente/vista-cliente-pagos/vista-cliente-pagos.component';
 
 
 const routes: Routes = [
@@ -85,6 +86,11 @@ const routes: Routes = [
       canActivate:[SessionsGuard]
     },
     {
+      path:'miCarrito',
+      component:VistaClienteCarritoComponent,
+      canActivate:[SessionsGuard]
+    },
+    {
       path:'misPedidos',
       component:VistaClientePedidosComponent,
       canActivate:[SessionsGuard]
@@ -92,6 +98,11 @@ const routes: Routes = [
     {
       path:'miPerfil',
       component:VistaClientePerfilComponent,
+      canActivate:[SessionsGuard]
+    },
+    {
+      path:'pago',
+      component:VistaClientePagosComponent,
       canActivate:[SessionsGuard]
     },
   {
