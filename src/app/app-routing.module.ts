@@ -40,6 +40,10 @@ import { InsertMenuComponent } from './modules/panel/pages/menu/insert-menu/inse
 import { UpdateMenuComponent } from './modules/panel/pages/menu/update-menu/update-menu.component';
 import { EntradasComponent } from './modules/panel/pages/inventario/entradas/entradas.component';
 import { InsertEntradaComponent } from './modules/panel/pages/inventario/entradas/insert-entrada/insert-entrada.component';
+import { BaseClienteComponent } from './modules/vistaCliente/base-cliente/base-cliente.component';
+import { VistaClienteMenuComponent } from './modules/vistaCliente/vista-cliente-menu/vista-cliente-menu.component';
+import { VistaClientePedidosComponent } from './modules/vistaCliente/vista-cliente-pedidos/vista-cliente-pedidos.component';
+import { VistaClientePerfilComponent } from './modules/vistaCliente/vista-cliente-perfil/vista-cliente-perfil.component';
 
 
 
@@ -70,7 +74,27 @@ const routes: Routes = [
       },
     ]
   },
-  {                                                                                               
+  { path: 'sweetdreams',
+    component: BaseClienteComponent,
+    canActivate:[SessionsGuard]
+  },
+
+    {
+      path:'miMenu',
+      component:VistaClienteMenuComponent,
+      canActivate:[SessionsGuard]
+    },
+    {
+      path:'misPedidos',
+      component:VistaClientePedidosComponent,
+      canActivate:[SessionsGuard]
+    },
+    {
+      path:'miPerfil',
+      component:VistaClientePerfilComponent,
+      canActivate:[SessionsGuard]
+    },
+  {
     path:'panel',
     component: PanelComponent,
     canActivate:[SessionsGuard]

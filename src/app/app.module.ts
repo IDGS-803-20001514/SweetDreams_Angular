@@ -1,3 +1,4 @@
+import { VistaClienteModule } from './modules/vistaCliente/vistaCliente.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -33,7 +34,8 @@ import { NotFoundComponent } from './modules/ServerErrors/not-found/not-found.co
     SharedModule,
     HomeModule,
     AuthModule,
-    PanelModule
+    PanelModule,
+    VistaClienteModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
