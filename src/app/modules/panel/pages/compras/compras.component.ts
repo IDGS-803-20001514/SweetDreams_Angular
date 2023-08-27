@@ -32,6 +32,7 @@ export class ComprasComponent {
         console.log(res);
         this.compras = res;
         this.compras.forEach(arrCompra => {
+          
           this.proveedorSevice.obtenerProveedor(arrCompra.proveedorId).subscribe({
             next: (res) => {
               arrCompra.proveedor = res;

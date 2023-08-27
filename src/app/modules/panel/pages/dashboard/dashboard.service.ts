@@ -8,10 +8,10 @@ import { CompraData, topClientes, topProductos, utilidad } from 'src/app/interfa
 })
 export class DashboardService {
 
-  private apiUrl = 'http://192.168.100.51:7220/api'; // Cambiar a la URL correcta
+  private apiUrl = 'https://localhost:7220/api'; // Cambiar a la URL correcta
 
     constructor(private http: HttpClient) {}
-  
+
     getChartData(): Observable<CompraData[]> {
       return this.http.get<CompraData[]>(`${this.apiUrl}/comprasGeneral`)
         .pipe(

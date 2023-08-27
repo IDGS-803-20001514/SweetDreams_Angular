@@ -38,7 +38,7 @@ import { EntradasComponent } from './pages/inventario/entradas/entradas.componen
 import { InsertEntradaComponent } from './pages/inventario/entradas/insert-entrada/insert-entrada.component';
 import { SalidasComponent } from './pages/inventario/salidas/salidas.component';
 import { InsertSalidasComponent } from './pages/inventario/salidas/insert-salidas/insert-salidas.component';
-import { NgChartsModule } from 'ng2-charts';
+// import { NgChartsModule } from 'ng2-charts';
 import { MetodoPagoComponent } from './pages/metodo-pago/metodo-pago.component';
 
 
@@ -86,7 +86,7 @@ import { MetodoPagoComponent } from './pages/metodo-pago/metodo-pago.component';
     RouterModule,
     SharedModule,
     FormsModule,
-    NgChartsModule
+    // NgChartsModule
   ]
 })
 export class PanelModule { }

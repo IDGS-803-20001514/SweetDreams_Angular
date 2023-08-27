@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CompraData, topClientes, topProductos, utilidad } from 'src/app/interfaces/dash-board';
 import { DashboardService } from './dashboard.service';
-import { ChartOptions } from 'chart.js';
+// import { ChartOptions } from 'chart.js';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,17 +15,17 @@ export class DashboardComponent {
   Utilidad: utilidad[]=[];
   chartType: string = 'bar';
 
-  chartOptions: ChartOptions = {
-    responsive: true,
-    maintainAspectRatio: false,
-  };
+  // chartOptions: ChartOptions = {
+  //   responsive: true,
+  //   maintainAspectRatio: false,
+  // };
 
   constructor(private dashboardService: DashboardService) {}
 
   ngOnInit(){
 
     this.dashboardService.getChartData().subscribe((data)=>{
-      this.chartData = data      
+      this.chartData = data
     });
 
     this.dashboardService.getDatosClientes().subscribe((data)=>{
